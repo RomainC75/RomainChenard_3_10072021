@@ -1,0 +1,470 @@
+$secondary-color:#F075DA;
+$primary-color:#9B53DD;
+$tertiary-color:#99E2D0;
+
+$degradeViolet:linear-gradient(170deg,$secondary-color,$primary-color);
+$nouveau-back:#99E2D0;
+$nouveau-color:darken($nouveau-back,40%);
+
+
+@mixin flexCenter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@mixin box-shadow{
+    box-shadow:6px 6px 10px #EAEAEA;
+}
+
+
+
+@mixin buttonV{
+    height:50px;
+    background:$degradeViolet;
+    border-radius:2em;
+    color:white;
+    box-shadow:6px 6px 10px #CFCFCF;
+    @include flexCenter;
+}
+
+@mixin buttonG{
+
+}
+
+@mixin circle($len){
+    width:$len;
+    height:$len;
+    border-radius:100%;
+}
+
+@mixin pseudo-opa{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            opacity:0;
+            z-index:-1;
+}
+
+@function degradeViolet(){
+    @return linear-gradient(170deg,$secondary-color,$primary-color);
+}
+
+
+@keyframes fadein{
+    0%{
+        opacity:0;
+        transform:translateY(20px) scale(1.1);;
+        background:rgb(198, 198, 198);
+    }
+    70%{
+        background:white;
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+        
+        color:black;
+    }
+}
+
+/*----------*/
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    margin:0px;
+    min-width:375px;
+    background:#F6F6F6;
+}
+
+.header{
+    &__logo{
+        @include flexCenter;
+        height:60px;
+        
+        & img{
+            display:block;
+            width:165px;
+        }
+    }
+    &__location{
+        @include flexCenter;
+        height:50px;
+        background:#EAEAEA;
+        box-shadow:inset 0px 3px 2px #CFCFCF;
+        & p{
+            margin-left:14px;
+        }
+    }
+    &__reservez{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        align-items:center;
+        background:#F6F6F6;
+        padding:40px;
+        text-align:center;
+        & h2{
+            font-size:25px;
+            margin-top:0px;
+            margin-bottom:20px;
+        }
+        & h3{
+            font-weight:300;
+            color:#868686;
+            font-size:17px;
+            margin-top:0px;
+            margin-bottom:30px;
+
+        }
+        &__violetButton{
+            @include buttonV;
+            margin-bottom:20px;
+            width:220px;
+        }
+    }
+}
+
+.fonctionnement{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:50px 20px;
+    height:320px;
+    & h2{
+        margin-top:0px;
+        margin-bottom:30px;
+        width:auto;
+        @media (max-width:375px){
+            width:335px;
+        }
+    }
+    &__button{
+        width:320px;
+        height:70px;
+        border-radius:1.5em;
+        background:#F6F6F6;
+        @include box-shadow;
+        position:relative;
+        margin-bottom:20px;
+        @include flexCenter;
+        cursor:pointer;
+        position:relative;
+        z-index:1;
+
+        &__number{
+            position:absolute;
+            z-index:3;
+            background:$primary-color;
+            @include circle(23px);
+            @include flexCenter;
+            font-size:14px;
+            left:-10px;
+            color:white;
+            & p{
+                color:white;
+            }
+        }
+        & i{
+            position:absolute;
+            z-index:3;
+            left:30px;
+            color:grey;
+            transform:scale(1.2);
+        }
+        &:hover{
+            //background:#F5EDFF;
+            z-index:1;
+            &::after{
+                opacity:1;
+                //z-index:1;
+            }
+        }
+        &:hover i{
+            color:$primary-color;
+        }
+        &::after{
+            @include pseudo-opa;
+            background:#F5EDFF;
+            transition:opacity 250ms;
+            border-radius:1.5em;
+        }
+
+    }
+}
+
+.restaurants{
+    background:#F6F6F6;
+    padding:60px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    & h1{
+        width:auto;
+        @media (max-width:375px){
+            width:335px;
+        }
+    }
+    &__square{
+        width:335px;
+        height:250px;
+        border-radius:1em;
+        position:relative;
+        background:white;
+        @include box-shadow;
+        margin-bottom:18px;
+        &__nouveau{
+            position:absolute;
+            width:80px;
+            height:30px;
+            @include flexCenter();
+            background:$nouveau-back;
+            color:$nouveau-color;
+            font-size:15px;
+            left:243px;
+            top:10px;
+            border-radius:5%;
+        }
+        &__img{
+            height:70%;
+            width:100%;
+            border-top-left-radius:1em;
+            border-top-right-radius:1em;
+            object-fit:cover;
+        }
+        &__bottom{
+            position:relative;
+            bottom:4px;
+            padding-left:10px;
+            padding-right:20px;
+            //padding-top:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            &__title{
+                height:75px;
+                & h5{
+                    margin-top:20px;
+                    margin-bottom:8px;
+                    font-size:15px;
+                }
+                & p{
+                    margin:0px;
+                    font-size:14px;
+                    font-weight:300;
+
+                }
+            }
+            &__heart{
+                &__Heart{
+                    width:20px;
+                    position:relative;
+                    
+                }
+                
+                &__Heart--full{
+                    width:20px;
+                    display:none;
+                    
+                    
+                }
+                &:hover {
+                    & > .restaurants__square__bottom__heart__Heart{
+                        display:none;
+                    }
+                    & > .restaurants__square__bottom__heart__Heart--full{
+                        display:inline;
+                    }
+                }
+                
+
+            }
+        }
+    }
+}
+
+footer{
+    background:#363636;
+    color:white;
+    padding:25px;
+    font-weight:300;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    /*& div{
+        width:335px;
+    }*/
+}
+
+.footer{
+    &__title, &__links{
+        @media (max-width:440px){
+            width:325px;
+        }
+    }
+    &__title{
+        & img{
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(152deg) brightness(103%) contrast(103%);
+            width:100px;
+            margin-bottom:20px;
+        }
+    }
+    &__links{
+        & p{
+            font-size:14px;
+            margin-top:0px;
+            margin-bottom:10px;
+        }
+        &__restaurant{
+            & i{
+                display:inline-block;
+                &::before{
+                    display:block;
+                }
+            }
+            & p{
+                display:inline-block;
+                
+            }
+            &__p{
+                margin-left:5px;     
+            }
+        }
+        &__partenaire{
+            & i{
+                display:inline-block;
+            }
+            & p{
+                display:inline-block;
+            }
+        }
+        &__p{
+                margin-left:0px;
+        }
+    }
+    
+}
+
+/* ------- MENU PAGES --------*/
+/*---------------------------*/
+.menuHeader{
+    &__top{
+        height:65px;
+        position:relative;
+        @include flexCenter;
+        background:white;
+        & .fas{
+            position:absolute;
+            left:20px;
+            transform:scale(1.2);
+        }
+        &__img{
+            width:165px;
+        }
+    }
+    &__mainPhoto {
+        width:375px;
+        margin:0 auto;
+        display:block;
+    }    
+}
+
+.menu{
+    position:relative;
+    top:-30px;
+    border-top-left-radius:2em;
+    border-top-right-radius:2em;
+    background:#F6F6F6;
+    padding:0 20px 20px 20px;
+    
+    &__title{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:40px 0 0 0;
+        width:335px;
+        margin:0 auto;
+        & h2{
+            font-family: 'Shrikhand', cursive;
+            font-size:27px;
+            margin:0px;
+            font-weight:300;
+        }
+        &__heart{
+            width:20px;
+            height:20px;
+        }
+    }
+    &__section{
+        margin:0 auto;
+        width:335px;
+        & h3{
+            font-weight:300;
+            font-size:15px;
+            margin-top:40px;
+            
+            position:relative;
+            &::after{
+                content:"";
+                position:absolute;
+                width:40px;
+                height:3px;
+                background:$tertiary-color;
+                left:0;
+                bottom:-5px;
+            }
+        }
+        &__platContainer{
+            width:310px;
+            height:40px;
+            margin-bottom:15px;
+            background:white;
+            padding:15px 15px 15px 10px;
+            border-radius:1em;
+            box-shadow:6px 6px 10px #E9E9E9;
+            &__name{
+                font-size:17px;
+                font-weight:500;
+            }
+            &__data{
+                display:flex;
+                justify-content:space-between;
+                width:100%;
+                font-size:15px;
+                & p{
+                    margin:10px 0 0 0 ;
+                }
+                &__ingredient{
+                    font-weight:200;
+                    
+                }
+                &__prix{
+                    font-weight:500;
+                }
+            }
+        }
+    }
+    &__button{
+        margin:50px auto;
+        @include buttonV;
+        width:190px;
+    }
+}
+
+.opa-one{
+    animation: fadein 1s;
+}
+
+.opa-two{
+    animation: fadein 2s;
+}
+
+.opa-three{
+    animation: fadein 3s;
+}
