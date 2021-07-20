@@ -71,6 +71,142 @@ $nouveau-color:darken($nouveau-back,40%);
     }
 }
 
+
+@keyframes opaAndRotation{
+    0%{
+        opacity:0;
+        transform:rotate(0deg);
+    }
+    10%{
+        opacity:0;
+    }
+
+    100%{
+        transform:rotate(360deg);
+        opacity:1;
+    }
+}
+
+/*-------- loading Spinner ------*/
+
+@keyframes fadeout{
+    0%{
+        opacity:0.8;
+    }
+    100%{
+        opacity:0;
+    }
+}
+  
+  @keyframes cadre{
+    0%{
+      
+    }
+    25%{
+      background:#333239;
+    }
+    50%{
+      background:#A2A0B3;
+      //transform:scale(1.05);
+    }
+    75%{
+      background:#333239;
+    }
+    100%{
+      transform:scale(0);
+        
+    }
+  }
+
+  
+  
+  .loading{
+    /*filter:blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);*/
+    backdrop-filter: blur(6px);
+    animation:fadeout 4s;
+    animation-fill-mode:both;
+    position:absolute;
+    z-index:40;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    background:grey;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    &__container{
+      width:10px;
+      height:90px;
+      
+      position:relative;
+      &__barre{
+        width:10px;
+        height:30px;
+        background:#333239;
+        position:absolute;
+        transform-origin:50% 150%;
+        border-radius:2em;
+        &.b1{
+            transform:rotate(0deg);
+            animation:cadre 1s infinite;
+        }
+        &.b2{
+          transform:rotate(30deg);
+          animation:cadre 1s 0.083s infinite;
+        }
+        &.b3{
+          transform:rotate(60deg);
+          animation:cadre 1s 0.166s infinite;
+        }
+        &.b4{
+          transform:rotate(90deg);
+          animation:cadre 1s 0.249s infinite;
+        }
+        &.b5{
+          transform:rotate(120deg);
+          animation:cadre 1s 0.332s infinite;
+        }
+        &.b5{
+          transform:rotate(120deg);
+          animation:cadre 1s 0.415s infinite;
+        }
+        &.b6{
+          transform:rotate(150deg);
+          animation:cadre 1s 0.498s infinite;
+        }
+        &.b7{
+          transform:rotate(180deg);
+          animation:cadre 1s 0.581s infinite;
+        }
+        &.b8{
+          transform:rotate(210deg);
+          animation:cadre 1s 0.664s infinite;
+        }
+        &.b9{
+          transform:rotate(240deg);
+          animation:cadre 1s 0.747s infinite;
+        }
+        &.b10{
+          transform:rotate(270deg);
+          animation:cadre 1s 0.83s infinite;
+        }
+        &.b11{
+          transform:rotate(300deg);
+          animation:cadre 1s 0.913s infinite;
+        }
+        &.b12{
+          transform:rotate(330deg);
+          animation:cadre 1s 1s infinite;
+        }
+      }
+    }
+  }
+  
 /*----------*/
 
 *{
@@ -81,6 +217,10 @@ body{
     margin:0px;
     min-width:375px;
     background:#F6F6F6;
+}
+a{
+    text-decoration:none;
+    text-decoration-color:black;
 }
 
 .header{
@@ -121,7 +261,6 @@ body{
             font-size:17px;
             margin-top:0px;
             margin-bottom:30px;
-
         }
         &__violetButton{
             @include buttonV;
@@ -157,7 +296,6 @@ body{
         cursor:pointer;
         position:relative;
         z-index:1;
-
         &__number{
             position:absolute;
             z-index:3;
@@ -265,14 +403,18 @@ body{
                 &__Heart{
                     width:20px;
                     position:relative;
-                    
                 }
                 
                 &__Heart--full{
                     width:20px;
                     display:none;
-                    
-                    
+                    background:linear-gradient(170deg,$secondary-color,$primary-color);
+                    background: -webkit-linear-gradient(170deg,$secondary-color,$primary-color);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    &::before{
+                        //display:none;
+                    }
                 }
                 &:hover {
                     & > .restaurants__square__bottom__heart__Heart{
@@ -280,6 +422,7 @@ body{
                     }
                     & > .restaurants__square__bottom__heart__Heart--full{
                         display:inline;
+                        
                     }
                 }
                 
@@ -288,6 +431,7 @@ body{
         }
     }
 }
+
 
 footer{
     background:#363636;
@@ -300,6 +444,9 @@ footer{
     /*& div{
         width:335px;
     }*/
+    a{
+        color:white;
+    }
 }
 
 .footer{
@@ -381,7 +528,7 @@ footer{
     border-top-left-radius:2em;
     border-top-right-radius:2em;
     background:#F6F6F6;
-    padding:0 20px 20px 20px;
+    padding:0 15px 20px 15px;
     
     &__title{
         display:flex;
@@ -403,12 +550,11 @@ footer{
     }
     &__section{
         margin:0 auto;
-        width:335px;
+        width:350px;
         & h3{
             font-weight:300;
             font-size:15px;
             margin-top:40px;
-            
             position:relative;
             &::after{
                 content:"";
@@ -421,32 +567,84 @@ footer{
             }
         }
         &__platContainer{
-            width:310px;
-            height:40px;
+            display:flex;
+            justify-content:space-between;
+            width:350px;
+            height:70px;
             margin-bottom:15px;
             background:white;
-            padding:15px 15px 15px 10px;
             border-radius:1em;
             box-shadow:6px 6px 10px #E9E9E9;
-            &__name{
-                font-size:17px;
-                font-weight:500;
-            }
-            &__data{
-                display:flex;
-                justify-content:space-between;
-                width:100%;
-                font-size:15px;
-                & p{
-                    margin:10px 0 0 0 ;
-                }
-                &__ingredient{
-                    font-weight:200;
+            overflow:hidden;
+            cursor:pointer;
+            &__main{
+                display:inline-block;
+                flex-grow:2;
+                
+                margin:15px 15px 15px 10px;
+                &__name{
+                    margin:0;
                     
+                    & h4{
+                        font-size:17px;
+                        margin:0px;
+                        font-weight:500;
+                    }
                 }
-                &__prix{
-                    font-weight:500;
+                &__data{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    width:100%;
+                    font-size:15px;
+                    height:33px;
+                    & p{
+                        
+                        margin:0px;
+                        //margin:10px 0 0 0 ;
+                        
+                    }
+
+                    &__ingredient{
+                        font-weight:200;
+                        text-overflow:ellipsis;
+                        overflow:hidden;
+                        white-space:nowrap;
+                    }
+                    &__prix{
+                        font-weight:500;
+                        
+                    }
                 }
+            }
+            &__greenCheck{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-basis:0px;
+                background:$tertiary-color;
+                border-top-right-radius:1em;
+                border-bottom-right-radius:1em;
+                overflow:hidden;
+                transition: flex-basis 0.5s ease-in-out;
+
+                &__icon{
+                    color:white;
+                }
+            }
+            &:hover &__greenCheck{
+                flex-basis:60px;
+                background:$tertiary-color;
+                
+            }
+
+            &:hover &__greenCheck__icon{
+                animation:opaAndRotation 0.6s;
+                animation-fill-mode:both;
+            }
+
+            &:hover .threeDots{
+                width:200px;
             }
         }
     }
@@ -456,6 +654,12 @@ footer{
         width:190px;
     }
 }
+//animation ...
+.threeDots{
+    width:295px;
+    transition:width 0.5s ease-in-out;
+}
+
 
 .opa-one{
     animation: fadein 1s;
