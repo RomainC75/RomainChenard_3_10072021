@@ -218,7 +218,8 @@ body{
     min-width:375px;
     background:#F6F6F6;
 }
-a{
+
+a, a:link , a:visited, a:hover , a:active {
     text-decoration:none;
     text-decoration-color:black;
 }
@@ -412,9 +413,9 @@ a{
                     background: -webkit-linear-gradient(170deg,$secondary-color,$primary-color);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    &::before{
+                    /*&::before{
                         //display:none;
-                    }
+                    }*/
                 }
                 &:hover {
                     & > .restaurants__square__bottom__heart__Heart{

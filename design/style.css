@@ -268,7 +268,7 @@ body {
   background: #F6F6F6;
 }
 
-a {
+a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   -webkit-text-decoration-color: black;
           text-decoration-color: black;
@@ -585,6 +585,9 @@ a {
   background: -webkit-linear-gradient(170deg, #F075DA, #9B53DD);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /*&::before{
+                        //display:none;
+                    }*/
 }
 
 .restaurants__square__bottom__heart:hover > .restaurants__square__bottom__heart__Heart {
