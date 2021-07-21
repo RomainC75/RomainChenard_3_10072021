@@ -13,9 +13,22 @@ $nouveau-color:darken($nouveau-back,40%);
     align-items:center;
 }
 
+
+
+/*fusion*/
 @mixin box-shadow{
     box-shadow:6px 6px 10px #EAEAEA;
 }
+
+@mixin biggerShadow{
+    transform:scale(1.02);
+    box-shadow:8px 8px 10px #c4c4c4;
+}
+/*------*/
+
+
+
+
 
 
 
@@ -26,11 +39,30 @@ $nouveau-color:darken($nouveau-back,40%);
     color:white;
     box-shadow:6px 6px 10px #CFCFCF;
     @include flexCenter;
+    position:relative;
+    ::after{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        background:linear-gradient(-170deg,lighten($secondary-color,4%),lighten($primary-color,3%));
+        top:0;
+        left:0;
+        border-radius:2em;
+        opacity:0;
+        z-index:-1;
+        transition:opacity 1s;
+    }
+    &:hover{
+        z-index:1;
+        @include biggerShadow;
+    }
+    :hover::after{
+        opacity:1;
+    }
+
 }
 
-@mixin buttonG{
-
-}
 
 @mixin circle($len){
     width:$len;
@@ -52,6 +84,7 @@ $nouveau-color:darken($nouveau-back,40%);
 @function degradeViolet(){
     @return linear-gradient(170deg,$secondary-color,$primary-color);
 }
+
 
 
 @keyframes fadein{
@@ -91,9 +124,14 @@ $nouveau-color:darken($nouveau-back,40%);
 
 @keyframes fadeout{
     0%{
+        visibility:visible;
         opacity:0.8;
     }
+    80%{
+        opacity:0.5;
+    }
     100%{
+        visibility:hidden;
         opacity:0;
     }
 }
@@ -222,6 +260,7 @@ body{
 a, a:link , a:visited, a:hover , a:active {
     text-decoration:none;
     text-decoration-color:black;
+    color:black;
 }
 
 .header{
@@ -267,6 +306,12 @@ a, a:link , a:visited, a:hover , a:active {
             @include buttonV;
             margin-bottom:20px;
             width:220px;
+            transition:all 0.5s ease-out;
+            /*&:hover{
+                //@include biggerShadow;
+                //background:linear-gradient(170deg,lighten($secondary-color,3%),lighten($primary-color,3%));
+                //background:linear-gradient(90deg,$secondary-color,$primary-color);
+            }*/
         }
     }
 }
@@ -297,6 +342,7 @@ a, a:link , a:visited, a:hover , a:active {
         cursor:pointer;
         position:relative;
         z-index:1;
+        transition:all 0.5s ease-out;
         &__number{
             position:absolute;
             z-index:3;
@@ -319,6 +365,7 @@ a, a:link , a:visited, a:hover , a:active {
         }
         &:hover{
             //background:#F5EDFF;
+            @include biggerShadow;
             z-index:1;
             &::after{
                 opacity:1;
@@ -358,6 +405,10 @@ a, a:link , a:visited, a:hover , a:active {
         background:white;
         @include box-shadow;
         margin-bottom:18px;
+        transition:all 0.5s ease-out;
+        &:hover{
+            @include biggerShadow;
+        }
         &__nouveau{
             position:absolute;
             width:80px;
@@ -464,6 +515,11 @@ footer{
         }
     }
     &__links{
+        & a, a:link , a:visited, a:hover , a:active {
+            text-decoration:none;
+            text-decoration-color:white;
+            color:white;
+        }
         & p{
             font-size:14px;
             margin-top:0px;
@@ -653,14 +709,24 @@ footer{
         margin:50px auto;
         @include buttonV;
         width:190px;
+        transition:all 0.5s ease-out;
+        &:hover{
+            @include biggerShadow;
+        }
     }
 }
+
+
 //animation ...
 .threeDots{
     width:295px;
     transition:width 0.5s ease-in-out;
 }
+/*opacity animation*/
 
+.opa-photo{
+    animation: fadein 0.8s;
+}
 
 .opa-one{
     animation: fadein 1s;
