@@ -342,13 +342,13 @@ a, a:link, a:visited, a:hover, a:active {
   text-align: center;
 }
 
-.header__reservez h2 {
+.header__reservez h1 {
   font-size: 25px;
   margin-top: 0px;
   margin-bottom: 20px;
 }
 
-.header__reservez h3 {
+.header__reservez h2 {
   font-weight: 300;
   color: #868686;
   font-size: 17px;
@@ -543,12 +543,12 @@ a, a:link, a:visited, a:hover, a:active {
           align-items: center;
 }
 
-.restaurants h1 {
+.restaurants h2 {
   width: auto;
 }
 
 @media (max-width: 375px) {
-  .restaurants h1 {
+  .restaurants h2 {
     width: 335px;
   }
 }
@@ -623,15 +623,15 @@ a, a:link, a:visited, a:hover, a:active {
   height: 75px;
 }
 
-.restaurants__square__bottom__title h5 {
+.restaurants__square__bottom__title__name {
   margin-top: 20px;
-  margin-bottom: 8px;
-  font-size: 15px;
+  margin-bottom: 4px;
+  font-size: 17px;
 }
 
 .restaurants__square__bottom__title p {
   margin: 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
 }
 
@@ -796,7 +796,7 @@ footer a {
   margin: 0 auto;
 }
 
-.menu__title h2 {
+.menu__title h1 {
   font-family: 'Shrikhand', cursive;
   font-size: 27px;
   margin: 0px;
@@ -813,14 +813,14 @@ footer a {
   width: 350px;
 }
 
-.menu__section h3 {
+.menu__section h2 {
   font-weight: 300;
   font-size: 15px;
   margin-top: 40px;
   position: relative;
 }
 
-.menu__section h3::after {
+.menu__section h2::after {
   content: "";
   position: absolute;
   width: 40px;

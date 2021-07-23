@@ -1,0 +1,32 @@
+.container{
+    width:25px;
+    height:25px;
+    margin:300px auto;
+    position:relative;
+    border:1px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    &__emptyHeart{
+        
+    }
+    &__fullHeart{
+        position:absolute;
+        opacity:0;
+        background: -webkit-linear-gradient(#F075DA,#9B53DD);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index:2;
+        transition:all 0.5s;
+        
+    }
+    &:hover .far{
+        
+    }
+    &:hover .fas{
+        opacity:1
+    }
+}
+
+
+
