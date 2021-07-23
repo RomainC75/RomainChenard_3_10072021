@@ -1,32 +1,68 @@
-.container{
-    width:25px;
-    height:25px;
-    margin:300px auto;
-    position:relative;
-    border:1px solid black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    &__emptyHeart{
+@keyframes animationHeart{
+    0% {
+        background-size: 100% 0%;
         
     }
-    &__fullHeart{
-        position:absolute;
-        opacity:0;
-        background: -webkit-linear-gradient(#F075DA,#9B53DD);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index:2;
-        transition:all 0.5s;
-        
+    100% {
+        background-size: 100% 100%;
     }
-    &:hover .far{
-        
-    }
-    &:hover .fas{
-        opacity:1
+}
+
+.restaurants{
+    &__square{
+        &__bottom{
+            &__heart{
+                width:40px;
+
+                
+                &:hover .restaurants__square__bottom__heart__emptyHeart{
+                    visibility:hidden;
+                }
+                &__emptyHeart{
+                    transition:all 0.5s ease-in-out;
+                    position:relative;
+                }
+                
+                &__fullHeart{
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    position: absolute;
+                    left:8px;
+                    top:8px;
+                    background: linear-gradient(#9356dc, #ff79da);
+                    background-size: 100% 0%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    
+                  &:hover {
+                    
+                    -webkit-animation: animationHeart 0.5s ease-out both;
+                    animation: animationHeart 0.5s ease-out both;
+                  }
+                  /*
+                  &:active {
+                    
+                    background: linear-gradient(#9356dc, #ff79da);
+                    background-size: 100% 100%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    -webkit-animation: animationHeart 0.5s linear;
+                    animation: animationHeart 0.5s linear;
+                  }
+                  */
+                }
+
+            }
+        }
     }
 }
 
 
+.ft {
 
+}

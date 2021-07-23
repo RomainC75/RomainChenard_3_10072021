@@ -1,32 +1,66 @@
-.container {
-  width: 25px;
-  height: 25px;
-  margin: 300px auto;
+@-webkit-keyframes animationHeart {
+  0% {
+    background-size: 100% 0%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes animationHeart {
+  0% {
+    background-size: 100% 0%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.restaurants__square__bottom__heart {
+  width: 40px;
+}
+
+.restaurants__square__bottom__heart:hover .restaurants__square__bottom__heart__emptyHeart {
+  visibility: hidden;
+}
+
+.restaurants__square__bottom__heart__emptyHeart {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: relative;
-  border: 1px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.container__fullHeart {
-  position: absolute;
-  opacity: 0;
-  background: -webkit-linear-gradient(#F075DA, #9B53DD);
+.restaurants__square__bottom__heart__fullHeart {
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 2;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(#9356dc, #ff79da);
+  background-size: 100% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  /*
+                  &:active {
+                    
+                    background: linear-gradient(#9356dc, #ff79da);
+                    background-size: 100% 100%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    -webkit-animation: animationHeart 0.5s linear;
+                    animation: animationHeart 0.5s linear;
+                  }
+                  */
 }
 
-.container:hover .fas {
-  opacity: 1;
+.restaurants__square__bottom__heart__fullHeart:hover {
+  -webkit-animation: animationHeart 0.5s ease-out both;
+  animation: animationHeart 0.5s ease-out both;
 }
 /*# sourceMappingURL=style.css.map */

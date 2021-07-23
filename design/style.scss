@@ -120,6 +120,15 @@ $nouveau-color:darken($nouveau-back,40%);
     }
 }
 
+@keyframes animationHeart{
+    0% {
+        background-size: 100% 0%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
 /*-------- loading Spinner ------*/
 
 @keyframes fadeout{
@@ -155,6 +164,7 @@ $nouveau-color:darken($nouveau-back,40%);
         
     }
   }
+
 
   
   
@@ -410,7 +420,16 @@ a, a:link , a:visited, a:hover , a:active {
         transition:all 0.5s ease-out;
         &:hover{
             @include biggerShadow;
+            
         }
+        &:hover .restaurants__square__bottom__heart__emptyHeart{
+            visibility:hidden;
+        }
+        &:hover .restaurants__square__bottom__heart__fullHeart{
+                    
+            -webkit-animation: animationHeart 0.5s ease-out both;
+            animation: animationHeart 0.5s ease-out both;
+          }
         &__nouveau{
             position:absolute;
             width:80px;
@@ -454,6 +473,7 @@ a, a:link , a:visited, a:hover , a:active {
                 }
             }
             &__heart{
+                /*
                 &__Heart{
                     width:20px;
                     position:relative;
@@ -466,9 +486,7 @@ a, a:link , a:visited, a:hover , a:active {
                     background: -webkit-linear-gradient(170deg,$secondary-color,$primary-color);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    /*&::before{
-                        //display:none;
-                    }*/
+                    
                 }
                 &:hover {
                     & > .restaurants__square__bottom__heart__Heart{
@@ -479,7 +497,33 @@ a, a:link , a:visited, a:hover , a:active {
                         
                     }
                 }
+                */
+                width:32px;
+                height:32px;
+                position:relative;
                 
+                
+                &__emptyHeart{
+                    transition:all 0.4s ease-out;
+                    //position:relative;
+                }
+                
+                &__fullHeart{
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    position: absolute;
+                    left:1px;
+                    top:0px;
+                    background: linear-gradient(#9356dc, #ff79da);
+                    background-size: 100% 0%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    
+                  
+                }
 
             }
         }
