@@ -69,18 +69,28 @@
 
 @-webkit-keyframes animationHeart {
   0% {
+    opacity: 0;
     background-size: 100% 0%;
   }
+  50% {
+    opacity: 0.4;
+  }
   100% {
+    opacity: 1;
     background-size: 100% 100%;
   }
 }
 
 @keyframes animationHeart {
   0% {
+    opacity: 0;
     background-size: 100% 0%;
   }
+  50% {
+    opacity: 0.4;
+  }
   100% {
+    opacity: 1;
     background-size: 100% 100%;
   }
 }
@@ -115,37 +125,41 @@
 
 @-webkit-keyframes cadre {
   0% {
+    background: #000000;
   }
   25% {
-    background: #333239;
+    background: #3c3b42;
   }
   50% {
-    background: #A2A0B3;
+    background: #9a99aa;
   }
   75% {
-    background: #333239;
+    background: #b5b4ce;
   }
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
+    background: #e2def8;
   }
 }
 
 @keyframes cadre {
   0% {
+    background: #000000;
   }
   25% {
-    background: #333239;
+    background: #3c3b42;
   }
   50% {
-    background: #A2A0B3;
+    background: #9a99aa;
   }
   75% {
-    background: #333239;
+    background: #b5b4ce;
   }
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
+    background: #e2def8;
   }
 }
 
@@ -188,7 +202,6 @@
 .loading__container__barre {
   width: 10px;
   height: 30px;
-  background: #333239;
   position: absolute;
   -webkit-transform-origin: 50% 150%;
           transform-origin: 50% 150%;
@@ -200,6 +213,8 @@
           transform: rotate(0deg);
   -webkit-animation: cadre 1s infinite;
           animation: cadre 1s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b2 {
@@ -207,6 +222,8 @@
           transform: rotate(30deg);
   -webkit-animation: cadre 1s 0.083s infinite;
           animation: cadre 1s 0.083s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b3 {
@@ -214,6 +231,8 @@
           transform: rotate(60deg);
   -webkit-animation: cadre 1s 0.166s infinite;
           animation: cadre 1s 0.166s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b4 {
@@ -221,6 +240,8 @@
           transform: rotate(90deg);
   -webkit-animation: cadre 1s 0.249s infinite;
           animation: cadre 1s 0.249s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b5 {
@@ -228,6 +249,8 @@
           transform: rotate(120deg);
   -webkit-animation: cadre 1s 0.332s infinite;
           animation: cadre 1s 0.332s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b5 {
@@ -235,6 +258,8 @@
           transform: rotate(120deg);
   -webkit-animation: cadre 1s 0.415s infinite;
           animation: cadre 1s 0.415s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b6 {
@@ -242,6 +267,8 @@
           transform: rotate(150deg);
   -webkit-animation: cadre 1s 0.498s infinite;
           animation: cadre 1s 0.498s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b7 {
@@ -249,6 +276,8 @@
           transform: rotate(180deg);
   -webkit-animation: cadre 1s 0.581s infinite;
           animation: cadre 1s 0.581s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b8 {
@@ -256,6 +285,8 @@
           transform: rotate(210deg);
   -webkit-animation: cadre 1s 0.664s infinite;
           animation: cadre 1s 0.664s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b9 {
@@ -263,6 +294,8 @@
           transform: rotate(240deg);
   -webkit-animation: cadre 1s 0.747s infinite;
           animation: cadre 1s 0.747s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b10 {
@@ -270,6 +303,8 @@
           transform: rotate(270deg);
   -webkit-animation: cadre 1s 0.83s infinite;
           animation: cadre 1s 0.83s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b11 {
@@ -277,6 +312,8 @@
           transform: rotate(300deg);
   -webkit-animation: cadre 1s 0.913s infinite;
           animation: cadre 1s 0.913s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .loading__container__barre.b12 {
@@ -284,6 +321,8 @@
           transform: rotate(330deg);
   -webkit-animation: cadre 1s 1s infinite;
           animation: cadre 1s 1s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 /*----------*/
