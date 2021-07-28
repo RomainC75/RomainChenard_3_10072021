@@ -1014,7 +1014,7 @@ footer a {
   white-space: nowrap;
   font-size: 17px;
   margin: 0px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .menu__section__platContainer__main__data {
@@ -1044,7 +1044,7 @@ footer a {
 }
 
 .menu__section__platContainer__main__data__prix {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .menu__section__platContainer__greenCheck {
