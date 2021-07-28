@@ -625,6 +625,8 @@ footer{
     }
     &__mainPhoto {
         width:375px;
+        height:250px;
+        object-fit:cover;
         margin:0 auto;
         display:block;
     }    

@@ -919,6 +919,9 @@ footer a {
 
 .menuHeader__mainPhoto {
   width: 375px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin: 0 auto;
   display: block;
 }
