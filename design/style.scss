@@ -140,24 +140,39 @@ $nouveau-color:darken($nouveau-back,40%);
 }
 
 @keyframes cadre{
-0%{
-    background:#000000;
+    0%{
+        background:#000000;
+    }
+    25%{
+        background:#3c3b42;
+    }
+    50%{
+        background:#9a99aa;
+        //transform:scale(1.05);
+    }
+    75%{
+        background:#b5b4ce;
+    }
+    100%{
+        transform:scale(0);
+        background:#e2def8;
+    }
 }
-25%{
-    background:#3c3b42;
+
+/*SPIN LOADER */
+
+$total:12;
+$stepDeg:360/$total;
+$stepTime:1/$total;
+
+@for $i from 1 through $total{
+    .b#{$i}{
+        transform:rotate(#{($i - 1) * $stepDeg}deg);
+        animation:cadre 1s #{($i - 1) * $stepTime}s infinite;
+        animation-fill-mode:forwards;
+    }
 }
-50%{
-    background:#9a99aa;
-    //transform:scale(1.05);
-}
-75%{
-    background:#b5b4ce;
-}
-100%{
-    transform:scale(0);
-    background:#e2def8;
-}
-}
+
 
   .loading{
     /*filter:blur(4px);
@@ -189,7 +204,7 @@ $nouveau-color:darken($nouveau-back,40%);
         position:absolute;
         transform-origin:50% 150%;
         border-radius:2em;
-        &.b1{
+        /*&.b1{
             transform:rotate(0deg);
             animation:cadre 1s infinite;
             animation-fill-mode:forwards;
@@ -254,6 +269,7 @@ $nouveau-color:darken($nouveau-back,40%);
           animation:cadre 1s 1s infinite;
           animation-fill-mode:forwards;
         }
+        */
       }
     }
   }
@@ -675,6 +691,9 @@ footer{
                 margin:15px 15px 15px 10px;
                 &__name{
                     margin:0;
+                    text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
                     & h4{
                         font-size:17px;
                         margin:0px;
