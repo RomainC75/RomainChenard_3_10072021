@@ -1012,12 +1012,9 @@ footer a {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.menu__section__platContainer__main__name h4 {
   font-size: 17px;
   margin: 0px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .menu__section__platContainer__main__data {
@@ -1047,7 +1044,7 @@ footer a {
 }
 
 .menu__section__platContainer__main__data__prix {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .menu__section__platContainer__greenCheck {

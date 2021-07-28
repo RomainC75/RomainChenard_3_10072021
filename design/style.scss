@@ -694,11 +694,10 @@ footer{
                     text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
-                    & h4{
                         font-size:17px;
                         margin:0px;
-                        font-weight:500;
-                    }
+                        font-weight:600;
+                    
                 }
                 &__data{
                     display:flex;
@@ -718,7 +717,7 @@ footer{
                         white-space:nowrap;
                     }
                     &__prix{
-                        font-weight:500;
+                        font-weight:600;
                         
                     }
                 }
