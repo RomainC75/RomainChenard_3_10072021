@@ -40,7 +40,8 @@ $nouveau-color:darken($nouveau-back,40%);
         width:100%;
         height:100%;
         position:absolute;
-        background:linear-gradient(-170deg,lighten($secondary-color,4%),lighten($primary-color,3%));
+        background:linear-gradient(-170deg,
+            lighten($secondary-color,4%),lighten($primary-color,3%));
         top:0;
         left:0;
         border-radius:2em;
@@ -520,16 +521,14 @@ a, a:link , a:visited, a:hover , a:active {
                     //position:relative;
                 }
                 &__fullHeart{
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;
                     position: absolute;
                     left:1px;
                     top:0px;
                     background: linear-gradient(#9356dc, #ff79da);
                     background-size: 100% 0%;
-                    -webkit-background-clip: text;
                     background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
                     background-position: bottom;
                     background-repeat: no-repeat; 
                 }
