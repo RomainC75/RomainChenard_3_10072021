@@ -1,0 +1,19 @@
+{
+  "name": "p3_chenard_romain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomainC75/RomainChenard_3_10072021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomainC75/RomainChenard_3_10072021/issues"
+  },
+  "homepage": "https://github.com/RomainC75/RomainChenard_3_10072021#readme"
+}

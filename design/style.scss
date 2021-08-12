@@ -181,7 +181,7 @@ $stepTime:1/$total;
     -ms-filter:blur(4px);
     -moz-filter:blur(4px);
     -webkit-filter:blur(4px);*/
-    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     animation:fadeout 4s;
     animation-fill-mode:both;
     position:absolute;
@@ -526,7 +526,8 @@ a, a:link , a:visited, a:hover , a:active {
                     top:0px;
                     background: linear-gradient(#9356dc, #ff79da);
                     background-size: 100% 0%;
-                    background-clip: text;
+
+                    //background-clip: text;
                     -webkit-background-clip: text;
                     color: transparent;
                     background-position: bottom;
@@ -698,7 +699,7 @@ footer{
                         font-size:17px;
                         margin:0px;
                         font-weight:500;
-                    
+
                 }
                 &__data{
                     display:flex;
@@ -784,3 +785,22 @@ footer{
 .opa-three{
     animation: fadein 3s;
 }
+
+@media (min-width:700px){
+    .fonctionnement{
+        align-content:space-between;
+        height:250px;
+    }
+
+    .fonctionnement-responsive{
+        margin-top:20px;
+        display:flex;
+        width:680px;
+        height:200px;
+        justify-content:space-around;
+        flex-wrap:wrap;
+        align-content:space-between;
+    }
+}
+
+    
